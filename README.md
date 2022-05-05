@@ -11,3 +11,13 @@ Currently working through CS50P, [Intro to programming with python](https://cs50
 |Einstein|5/3/22|
 |Tip Calculator|5/3/22|
 
+----------------------------
+
+### WEEK 1 : Conditionals
+| Problem Set| Date Completed |
+| ----------- | ----------- |
+|Deep Thought|5/4/22|
+|Home Federal Savings Bank|5/4/22|
+|File Extensions|5/4/22|
+|Math Interpreter|5/4/22|
+|Meal Time||
