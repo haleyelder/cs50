@@ -20,4 +20,15 @@ Currently working through CS50P, [Intro to programming with python](https://cs50
 |Home Federal Savings Bank|5/4/22|
 |File Extensions|5/4/22|
 |Math Interpreter|5/4/22|
-|Meal Time||
+|Meal Time|5/5/22|
+
+----------------------------
+
+### WEEK 1 : Conditionals
+| Problem Set| Date Completed |
+| ----------- | ----------- |
+|Camel Case||
+|Coke Machine||
+|Just setting up my twttr||
+|Vanity Plates||
+|Nutrition Facts||
