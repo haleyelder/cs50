@@ -31,6 +31,6 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 | ----------- | ----------- |
 |Camel Case|5/7/22|
 |Coke Machine|5/7/22|
-|Just setting up my twttr||
+|Just setting up my twttr|5/7/22|
 |Vanity Plates||
 |Nutrition Facts||
