@@ -1,6 +1,8 @@
 # cs50
 
-Currently working through CS50P, [Intro to programming with python](https://cs50.harvard.edu/python/2022/). I'll be tracking my problem sets and progress here. More to come!
+Currently working through CS50P, [Intro to programming with python](https://cs50.harvard.edu/python/2022/). I'll be tracking my problem sets and progress here.
+
+Eventually this repo will probably adjust to hold both CS50P and CS50Web. More to come!
 
 ### WEEK 0 : Functions, Variables
 | Problem Set| Date Completed |
@@ -24,11 +26,11 @@ Currently working through CS50P, [Intro to programming with python](https://cs50
 
 ----------------------------
 
-### WEEK 1 : Conditionals
+### WEEK 2 : Loops
 | Problem Set| Date Completed |
 | ----------- | ----------- |
-|Camel Case||
-|Coke Machine||
+|Camel Case|5/7/22|
+|Coke Machine|5/7/22|
 |Just setting up my twttr||
 |Vanity Plates||
 |Nutrition Facts||
