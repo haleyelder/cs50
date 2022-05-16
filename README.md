@@ -4,7 +4,7 @@ Currently working through CS50P, [Intro to programming with python](https://cs50
 
 Eventually this repo will probably adjust to hold both CS50P and CS50Web. More to come!
 
-### WEEK 0 : [Functions, Variables]((https://cs50.harvard.edu/python/2022/psets/0/))
+### WEEK 0 : [Functions, Variables](https://cs50.harvard.edu/python/2022/psets/0/)
 | Problem Set| Date Completed |
 | ----------- | ----------- |
 |Indoor Voice| 5/2/22  |
@@ -40,7 +40,7 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 ### WEEK 3 : [Exceptions](https://cs50.harvard.edu/python/2022/psets/3/)
 | Problem Set| Date Completed |
 | ----------- | ----------- |
-|Fuel Gauge||
-|Felipe's Taqueria||
-|Grocery List||
+|Fuel Gauge|5/14/22|
+|Felipe's Taqueria|5/15/22|
+|Grocery List|5/15/22|
 |Outdated||
