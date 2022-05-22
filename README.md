@@ -43,4 +43,17 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 |Fuel Gauge|5/14/22|
 |Felipe's Taqueria|5/15/22|
 |Grocery List|5/15/22|
-|Outdated||
+|Outdated|5/21/22|
+
+
+----------------------------
+
+### WEEK 4 : [Libraries](https://cs50.harvard.edu/python/2022/psets/4/)
+| Problem Set| Date Completed |
+| ----------- | ----------- |
+|Emojize||
+|Frank, Ian and Glen’s Letters||
+|Adieu, Adieu||
+|Guessing Game||
+|Little Professor||
+|Bitcoin Price Index||
