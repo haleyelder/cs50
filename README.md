@@ -45,13 +45,12 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 |Grocery List|5/15/22|
 |Outdated|5/21/22|
 
-
 ----------------------------
 
 ### WEEK 4 : [Libraries](https://cs50.harvard.edu/python/2022/psets/4/)
 | Problem Set| Date Completed |
 | ----------- | ----------- |
-|Emojize||
+|Emojize|5/22/22|
 |Frank, Ian and Glen’s Letters||
 |Adieu, Adieu||
 |Guessing Game||
