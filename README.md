@@ -51,7 +51,7 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 | Problem Set| Date Completed |
 | ----------- | ----------- |
 |Emojize|5/22/22|
-|Frank, Ian and Glen’s Letters||
+|Frank, Ian and Glen’s Letters|5/23/22|
 |Adieu, Adieu||
 |Guessing Game||
 |Little Professor||
