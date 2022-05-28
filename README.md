@@ -54,5 +54,36 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 |Frank, Ian and Glen’s Letters|5/23/22|
 |Adieu, Adieu|5/24/22|
 |Guessing Game|5/25/22|
-|Little Professor||
+|Little Professor|5/28/22 (needs refactor)|
 |Bitcoin Price Index||
+
+-------------------------------
+
+### WEEK 5 : [Unit Tests](https://cs50.harvard.edu/python/2022/psets/5/)
+| Problem Set| Date Completed |
+| ----------- | ----------- |
+|Testing my twittr||
+|Back to the Bank||
+|Re-requesting a Vanity Plate||
+|Refueling||
+
+-------------------------------
+
+### WEEK 6 : [File I/O](https://cs50.harvard.edu/python/2022/psets/6/)
+| Problem Set| Date Completed |
+| ----------- | ----------- |
+|Lines of Code||
+|Pizza Py||
+|Scourgify||
+|CS50 P-Shirt||
+
+----------------------------------
+
+### WEEK 7 : [Regular Expressions](https://cs50.harvard.edu/python/2022/psets/7/)
+| Problem Set| Date Completed |
+| ----------- | ----------- |
+|NUMB3RS||
+|Watch on YouTube||
+|Working 9 to 5||
+|Regular, um, Expressions||
+|Response Validation||
