@@ -62,8 +62,8 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 ### WEEK 5 : [Unit Tests](https://cs50.harvard.edu/python/2022/psets/5/)
 | Problem Set| Date Completed |
 | ----------- | ----------- |
-|Testing my twittr||
-|Back to the Bank||
+|Testing my twittr|5/29/22|
+|Back to the Bank|5/29/22|
 |Re-requesting a Vanity Plate||
 |Refueling||
 
