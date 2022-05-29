@@ -55,7 +55,7 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 |Adieu, Adieu|5/24/22|
 |Guessing Game|5/25/22|
 |Little Professor|5/28/22 (needs refactor)|
-|Bitcoin Price Index||
+|Bitcoin Price Index|5/28/22|
 
 -------------------------------
 
