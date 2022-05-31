@@ -1,4 +1,4 @@
-# REFACTOR from week2
+# REFACTOR\
 
 def main():
     text = input("Input: ")
