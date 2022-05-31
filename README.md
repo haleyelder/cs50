@@ -64,8 +64,8 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 | ----------- | ----------- |
 |Testing my twittr|5/29/22|
 |Back to the Bank|5/29/22|
-|Re-requesting a Vanity Plate||
-|Refueling||
+|Re-requesting a Vanity Plate|5/30/22|
+|Refueling|5/30/22|
 
 -------------------------------
 
