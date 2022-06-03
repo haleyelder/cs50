@@ -72,7 +72,7 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 ### WEEK 6 : [File I/O](https://cs50.harvard.edu/python/2022/psets/6/)
 | Problem Set| Date Completed |
 | ----------- | ----------- |
-|Lines of Code||
+|Lines of Code|6/2/22|
 |Pizza Py||
 |Scourgify||
 |CS50 P-Shirt||
