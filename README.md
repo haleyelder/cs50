@@ -73,7 +73,7 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 | Problem Set| Date Completed |
 | ----------- | ----------- |
 |Lines of Code|6/2/22|
-|Pizza Py||
+|Pizza Py|6/3/22|
 |Scourgify||
 |CS50 P-Shirt||
 
@@ -87,3 +87,15 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 |Working 9 to 5||
 |Regular, um, Expressions||
 |Response Validation||
+
+----------------------------------
+
+### WEEK 8 : [Object Oriented Programming](https://cs50.harvard.edu/python/2022/psets/8/)
+| Problem Set| Date Completed |
+| ----------- | ----------- |
+|Seasons of Love||
+|Cookie Jar||
+|CS50 Shirtificate||
+
+----------------------------------
+FINAL PROJECT
