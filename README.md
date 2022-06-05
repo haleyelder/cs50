@@ -75,7 +75,7 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 |Lines of Code|6/2/22|
 |Pizza Py|6/3/22|
 |Scourgify|6/4/22|
-|CS50 P-Shirt||
+|CS50 P-Shirt|6/5/22|
 
 ----------------------------------
 
