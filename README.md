@@ -82,9 +82,9 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 ### WEEK 7 : [Regular Expressions](https://cs50.harvard.edu/python/2022/psets/7/)
 | Problem Set| Date Completed |
 | ----------- | ----------- |
-|NUMB3RS||
-|Watch on YouTube||
-|Working 9 to 5||
+|NUMB3RS|6/10/22|
+|Watch on YouTube|6/10/22|
+|Working 9 to 5|6/11/22|
 |Regular, um, Expressions||
 |Response Validation||
 
