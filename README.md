@@ -85,8 +85,8 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 |NUMB3RS|6/10/22|
 |Watch on YouTube|6/10/22|
 |Working 9 to 5|6/11/22|
-|Regular, um, Expressions||
-|Response Validation||
+|Regular, um, Expressions|6/11/22|
+|Response Validation|6/11/2|
 
 ----------------------------------
 
