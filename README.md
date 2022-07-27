@@ -93,7 +93,7 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 ### WEEK 8 : [Object Oriented Programming](https://cs50.harvard.edu/python/2022/psets/8/)
 | Problem Set| Date Completed |
 | ----------- | ----------- |
-|Seasons of Love||
+|Seasons of Love|7/26/22|
 |Cookie Jar||
 |CS50 Shirtificate||
 
