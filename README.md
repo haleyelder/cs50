@@ -86,7 +86,7 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 |Watch on YouTube|6/10/22|
 |Working 9 to 5|6/11/22|
 |Regular, um, Expressions|6/11/22|
-|Response Validation|6/11/2|
+|Response Validation|6/11/22|
 
 ----------------------------------
 
@@ -94,7 +94,7 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 | Problem Set| Date Completed |
 | ----------- | ----------- |
 |Seasons of Love|7/26/22|
-|Cookie Jar||
+|Cookie Jar|11/14/22|
 |CS50 Shirtificate||
 
 ----------------------------------
