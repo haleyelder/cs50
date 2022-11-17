@@ -95,7 +95,7 @@ Eventually this repo will probably adjust to hold both CS50P and CS50Web. More t
 | ----------- | ----------- |
 |Seasons of Love|7/26/22|
 |Cookie Jar|11/14/22|
-|CS50 Shirtificate||
+|CS50 Shirtificate|11/16/22|
 
 ----------------------------------
 FINAL PROJECT
