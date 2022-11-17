@@ -15,7 +15,6 @@ class Jar:
         if n > self.capacity or n + self.size > self.capacity:
             raise ValueError
         self._size += n
-        # return capacity
 
     # remove cookies from jar, if remove is over totaly, value error
     def withdraw(self, n):
@@ -26,7 +25,7 @@ class Jar:
     # max capacity of jar (total after calculation)
     @property
     def capacity(self):
-        return self._capacity
+        return self._capacity 
 
     # current number of cookies in jar
     @property
