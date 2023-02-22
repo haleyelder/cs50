@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Advanced Search</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" title="Google logo" class="google-logo-adv justify-content-start"/>
+
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./images.html">Images</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="container-fluid adv-search-container">
+          <p class="adv-title"> Advanced Search </p>
+          <hr>
+          <form action="https://google.com/search">
+            <p>Find pages with...</p>
+                <div class="row">
+                  <div class="col adv-desc">
+                    <label>all these words:</label>
+                    <label>this exact word or phrase:</label>
+                    <label>any of these words: </label>
+                    <label>none of these words: </label>
+
+                  </div>
+                  <div class="col adv-input">
+                    <input type="text" id="all-words" name="as_q" />
+                    <input type="text" id="exact-word" name="as_epq"/>
+                    <input type="text" id="any-word" name="as_oq" />
+                    <input type="text" id="none" name="as_eq" />
+                    <div class="search-btns d-flex justify-content-end">
+                      <input type="submit" value="Advanced Search" class="adv-search-btn">
+                  </div>  
+                  </div>
+                  <div class="col adv-helper">
+                    <p class="adv-helper-title">To do this in the search box</p> 
+                    <p class="adv-helper-text">Type the important words:  <span style="font-family: monospace">tricolor rat terrier</span></p>
+                    <p class="adv-helper-text">Put exact words in quotes: <span style="font-family: monospace"> "rat terrier"</span></p>
+                    <p class="adv-helper-text">Type OR between all the words you want:  <span style="font-family: monospace">miniature OR standard</span></p>
+                    <p class="adv-helper-text">Put a minus sign just before words you don't want: </br>
+                      <span style="font-family: monospace">-rodent, -"Jack Russell"</span></p>
+
+                  </div>
+           
+                </div> 
+                
+          </form>
+    </div>
+  </body>
+</html>

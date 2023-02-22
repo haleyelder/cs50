@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Google Search</title>
+        <link rel="stylesheet" href="./style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <!-- <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">-->
+    </head>
+    <body>
+        
+        <header>
+            <div class="container-fluid">
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                      <a class="nav-link" href="./images.html">Images</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./advanced.html">Advanced Search</a>
+                    </li>
+                  </ul>
+            </div>
+        </header>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" title="Google logo" class="google-logo"/>
+                    <form action="https://google.com/search" class="search">
+                        <input type="text" name="q" class="searchbar">
+                        <div class="search-btns d-flex justify-content-end">
+                            <input type="submit" value="Google Search" class="search-button">
+                            <input value="I'm Feeling Lucky" name="btnI" type="submit" class="lucky-search"> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

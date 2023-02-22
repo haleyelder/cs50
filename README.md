@@ -1,4 +1,4 @@
 ## Tracking repos for CS50 Courses
 
-- cs50p: completed Jan 2023
-- cs50web: in progress
+- cs50p: May 2022 - Jan 2023
+- cs50web: Feb 2023 - 

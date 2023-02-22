@@ -1,0 +1,168 @@
+* {
+    font-family: Roboto,arial,sans-serif;
+}
+
+.nav li a {
+    color: rgba(0,0,0,.87);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav li a:hover {
+    text-decoration: underline;
+    color: rgba(0,0,0,.87);
+}
+
+.google-logo {
+    margin: 120px 0 30px 62%;
+}
+
+.google-logo-adv {
+    width: 72px;
+    margin: 22px 10px;
+    float: left;
+}
+
+.searchbar {
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 11px;
+    width: 100%;
+    margin: 0 45%;
+    max-width: 600px;
+}
+
+.searchbar:hover {
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+    border-color: rgba(223,225,229,0);
+}
+
+.searchbar:focus-visible {
+    outline: none;
+}
+
+.search .search-btns {
+    margin: 15px 93px;
+    padding: 3px;
+}
+
+.adv-title {
+    color: #d93025;
+    font-size: 20px;
+    margin: 50px 0 0 33px;
+}
+
+.adv-search-container hr {
+    color: lightgray;
+}
+
+.adv-search-container form {
+    margin: 50px 32px;
+}
+
+body > div > form > div.row > div.col.adv-desc {
+    max-width: 180px;
+}
+.adv-desc label {
+    font-size: 13px;
+    margin: 7px 0 20px 0;
+}
+
+.adv-input {
+    max-width: 600px !important;
+
+}
+.adv-input input {
+    margin: 6px 0 15px 0;
+    border-radius: 1px;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    font-size: 13px;
+    height: 25px;
+    padding: 1px 8px;
+    width: 95%;
+}
+
+.adv-input input:focus {
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 30%);
+    border: 1px solid #4d90fe;
+    outline: none;
+}
+
+
+@media screen and (min-width: 1070px) {
+  
+    .adv-helper-title {
+        color: #777;
+        font-size: 13px;
+        font-weight: 700;
+        margin-left: -16px;
+    }   
+    
+    .adv-helper {
+        display: block !important;
+        margin-top: -35px !important;
+    }
+    .adv-helper-text {
+        font-size: 11px;
+        margin-bottom: 33px;
+        color: #666;
+    }
+}
+
+.adv-helper {
+    display: none;
+}
+    
+div > form > div > div.adv-input > div > input {
+    box-shadow: none;
+    background-color: #4d90fe;
+    background-image: linear-gradient(top,#4d90fe,#4787ed);
+    border: 1px solid #3079ed;
+    color: #fff;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    cursor: default;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    margin-right: 24px;
+    height: 27px;
+    line-height: 27px;
+    min-width: 54px;
+    outline: 0;
+    padding: 0 8px;
+    width: 115px;
+}
+
+
+.search-button,
+.lucky-search {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.img-search-btns {
+    margin-right: 180px;
+}
+
+.search-button:hover,
+.lucky-search:hover {
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+}
