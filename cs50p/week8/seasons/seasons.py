@@ -33,7 +33,7 @@ def calc_difference(days):
 # convert minutes to text
 def add_text(text):
     text = p.number_to_words(text, andword="")
-    return text.capitalize() + " minutes"
+    return text.capitalize() + "" "minutes"
 
 if __name__ == "__main__":
     main()
