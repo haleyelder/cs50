@@ -32,7 +32,7 @@ def convert(s):
                         am = f"00:{firstNum[1]}"
                         listTime.append(am)
                     else:
-                        am = f"{digit:02}:{firstNum[1]}"
+                        am = f"{digit:0>2}:{firstNum[1]}"
                         listTime.append(am)
 
                     if int(firstNum[1]) > 59:
@@ -46,7 +46,7 @@ def convert(s):
                         listTime.append(pm)
                     else:
                         eveConvert = int(firstNum[0]) + 12
-                        pm = f"{str(eveConvert):02}:{firstNum[1]}"
+                        pm = f"{str(eveConvert):0>2}:{firstNum[1]}"
                         listTime.append(pm)
 
                     if int(firstNum[1]) > 59:
@@ -56,22 +56,22 @@ def convert(s):
                 singleDigit = i.split(" ")
 
                 if "AM" in singleDigit[1]:
-                    firstNum = int(singleDigit[0])
+                    firstNum = float(singleDigit[0])
                     if firstNum == 12:
                         am = f"00:00"
                         listTime.append(am)
                     else:
-                        am = f"{firstNum:02}:00"
+                        am = f"{firstNum:0>2}:00"
                         listTime.append(am)
 
                 if "PM" in singleDigit[1]:
-                    firstNum = int(singleDigit[0])
+                    firstNum = float(singleDigit[0])
                     if firstNum == 12:
                         pm = f"12:00"
                         listTime.append(pm)
                     else:
                         eveConvert = firstNum + 12
-                        pm = f"{str(eveConvert):02}:00"
+                        pm = f"{str(eveConvert):0>2}:00"
                         listTime.append(pm)
 
         return " to ".join(listTime)
