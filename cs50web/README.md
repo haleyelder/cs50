@@ -12,12 +12,12 @@ Starting Feb 2023 - Completed - ???
 ### WEEK 2 : Python
 | Project | Date Completed |
 | ----------- | ----------- |
-|P0 - Search||
+|P0 - Search|2/21/23|
 
 ### WEEK 3 : Django
 | Project | Date Completed |
 | ----------- | ----------- |
-|P1 - Wiki||
+|P1 - Wiki|3/26/23|
 
 ### WEEK 4 : SQL, Models, Migrations
 | Project | Date Completed |
