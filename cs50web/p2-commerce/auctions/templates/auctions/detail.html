@@ -1,0 +1,58 @@
+{% extends "auctions/layout.html" %} {% block body %}
+
+<h2>Listing Detail - {{listings.title}}</h2>
+
+
+<h4> Category(s):</h4>
+{% if categories %}
+  {% for category in categories %}
+    <ul>
+      <li>{{category.name}}</li>
+    </ul>
+  {% endfor %}
+{% else %}
+    <div> No category chosen</div>
+{% endif %}  
+
+<br>
+
+<p>description: {{ listings.description }}</p>
+<p>current bid: {{ listings.current_bid }}</p>
+
+<div class="listing-image">
+  {% if listings.image_url %}
+    <img src="{{listings.image_url}}" width="500" />
+  {% else %} 
+    No Image Available 
+  {% endif %}
+</div>
+
+<br />
+
+<p><input type="checkbox" /> Add to Watchlist</p>
+
+<hr />
+
+<h3>Comments</h3>
+
+{% if comments %}
+  {% for comment in comments %}
+      {{ comment.text }}
+      <br>
+  {% endfor %}
+{% else %}
+  No Comments
+{% endif %}  
+
+
+<br />
+<h3>Add Comment</h3>
+
+
+<form method="post">
+  {% csrf_token %} 
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

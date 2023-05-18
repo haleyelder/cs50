@@ -1,0 +1,18 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Add New Listing</h2>
+
+
+    <p> to add: if no image, placeholder to appear</p>
+    <p> category dropdown selection (required field?)</p>
+
+    <form action="{% url 'add_listing' %}" method="post">
+        {% csrf_token %}
+
+        {{addform.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+    
+
+{% endblock %}
