@@ -1,5 +1,6 @@
 # Average Reads
 #### Description:
+2024 edit -- migrated to a Flask - SqlAlechemy based app [here](https://average-reads.onrender.com/)
 
 This project is a command line program connected to a Firestore database to keep track of reading lists and books titles similar to the Goodreads platform. Originally, I was going to use their API for this project but they halted use of their API a couple years ago. All functionality is found in the project.py file and there were a few iterations and roadblocks for this project to come to fruition.
 
