@@ -10,41 +10,44 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural= "Categories"
-        
+
     def __str__(self):
         return f"{self.name}"
-    
-# add to watchlist
-class Watchlist(models.Model):
-    pass  
-    
+
 # auction listings
-class Listing(models.Model):
+class Auction(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
-    current_bid = models.IntegerField(null=True)
+    start_bid = models.IntegerField(null=True)
     image_url = models.CharField(max_length=255,blank=True, null=True)
     category = models.ManyToManyField(Category,related_name='categories')
-
+    isActive = models.BooleanField(default=True)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.title} | Current Bid: {self.current_bid}"
-    
+        return f"{self.title}"
+
 # listing comments
 class Comment(models.Model):
     text = models.CharField(max_length=255)
-    listing = models.ForeignKey(Listing,on_delete=models.CASCADE,related_name='comments',null=True)
+    auction = models.ForeignKey(Auction,on_delete=models.CASCADE,related_name='comments',null=True)
+    created_by = models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.text
+        return f"{self.text}, posted by {self.created_by}"
+
+class Watchlist(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="watchlist")
+    auctions = models.ManyToManyField(Auction, related_name="watched_by", blank=True)
+
+    def __str__(self):
+        return f"{self.user.username}'s watchlist"
 
 
 class Bid(models.Model):
-    start_bid = models.IntegerField(null=True)
-    current_bid = models.IntegerField(null=True)
-    bid_status = models.BooleanField(default=False, null=True)
-    listing = models.ForeignKey(Listing,on_delete=models.CASCADE,related_name='bids',null=True)
+    bid = models.IntegerField(default=0)
+    auction = models.ForeignKey(Auction,on_delete=models.CASCADE,related_name='auction')
+    bid_user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    
     def __str__(self):
-        return f"Starting Bid: {self.start_bid}, Current Bid: {self.current_bid}"
+        return f"{self.bid_user} bid: ${self.bid} on {self.auction}"

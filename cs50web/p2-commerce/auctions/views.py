@@ -1,31 +1,38 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
 from django.http import HttpResponseRedirect
 from django import forms
+from django.contrib import messages
 from django.forms import ModelForm
 from django.shortcuts import render, redirect,get_object_or_404
 from django.urls import reverse
+from django.db.models import Max
 
-from .models import User, Listing, Bid, Comment, Category,Watchlist
+from .models import User, Auction, Bid, Comment, Category, Watchlist
 
-#home page listings
+@login_required
 def index(request):
-    listinglist = Listing.objects.all()
-    
+    auctionlist = Auction.objects.all()
+    bid = Bid.objects.all()
+    highest_num = Bid.objects.values('auction_id').annotate(max_value=Max('bid'))
 
-    return render(request, "auctions/index.html", {
-        "listinglist":listinglist,
-    })
+    if request.user.is_authenticated:
+        return render(request, "auctions/index.html", {
+            "auctionlist":auctionlist,
+            "bid":bid,
+            "highest_num":highest_num
+        })
+    else:
+        return render(request, 'auctions/login.html')
 
 def login_view(request):
     if request.method == "POST":
 
-        # Attempt to sign user in
         username = request.POST["username"]
         password = request.POST["password"]
         user = authenticate(request, username=username, password=password)
 
-        # Check if authentication successful
         if user is not None:
             login(request, user)
             return HttpResponseRedirect(reverse("index"))
@@ -45,8 +52,6 @@ def register(request):
     if request.method == "POST":
         username = request.POST["username"]
         email = request.POST["email"]
-
-        # Ensure password matches confirmation
         password = request.POST["password"]
         confirmation = request.POST["confirmation"]
         if password != confirmation:
@@ -54,7 +59,6 @@ def register(request):
                 "message": "Passwords must match."
             })
 
-        # Attempt to create new user
         try:
             user = User.objects.create_user(username, email, password)
             user.save()
@@ -67,63 +71,114 @@ def register(request):
     else:
         return render(request, "auctions/register.html")
 
-# form add listing
-def add_listing(request):
-
+def add_auction(request):
     if request.method == "POST":
-        addform = AddListing(request.POST)
+        addform = AddAuction(request.POST)
         if addform.is_valid():
+            addform = addform.save(commit=False)
+            addform.created_by = User.objects.get(username=request.user)
             addform.save()
 
         else:
-            return render(request, 'auctions/add_listing.html', {
+            return render(request, 'auctions/add_auction.html', {
                 "addform":addform
-            })  
-              
-    return render(request, 'auctions/add_listing.html', {
-        "addform": AddListing()
-    })  
+            })
 
-class AddListing(ModelForm):
+    return render(request, 'auctions/add_auction.html', {
+        "addform": AddAuction()
+    })
 
+class AddAuction(ModelForm):
     class Meta:
-        model = Listing
-        fields = ['title','description','current_bid','image_url','category']
-    
+        model = Auction
+        fields = ['title','description','start_bid','image_url','category']
 
+@login_required
 def detail(request, id):
-    listings = Listing.objects.get(id=id)
-
-    #listing is from the model setup
-    comments = Comment.objects.filter(listing=listings)
+    user = request.user.id
+    listing_creator = request.user
+    auctions = Auction.objects.get(id=id)
+    watchlist, created = Watchlist.objects.get_or_create(user=request.user)
+    comments = Comment.objects.filter(auction=auctions)
     categories = Category.objects.filter(categories=id)
+    bid = Bid.objects.filter(auction=auctions)
+
+    highest_bid = Bid.objects.values('auction_id').annotate(max_value=Max('bid'))
+    winning_bid_user = Bid.objects.filter(auction_id=id).order_by('-bid').first()
 
     if request.method == "POST":
-        form = AddComment(request.POST)
-        
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.listing = Listing.objects.get(id=id)
-            comment.save()
+        commentform = AddComment(request.POST)
+        bidform = BidForm(request.POST)
+
+    ## add comment to auction
+        if commentform.is_valid():
+            commentform = commentform.save(commit=False)
+            commentform.auction = Auction.objects.get(id=id)
+            commentform.created_by = User.objects.get(username=request.user)
+            commentform.save()
+            return HttpResponseRedirect('/detail/' + str(id))
+
+        else:
+            form = AddComment()
+
+        if bidform.is_valid():
+
+            bid = bidform.save(commit=False)
+            bid.auction = Auction.objects.get(id=id)
+            bid.bid_user = User.objects.get(username=request.user)
+            entered_bid = bidform.cleaned_data['bid']
+
+            last_bid = 0
+            for max in highest_bid:
+                if max['auction_id'] == auctions.id:
+                    last_bid = max['max_value']
+
+            if bid.auction.start_bid and last_bid:
+                if entered_bid > last_bid:
+                    bid.save()
+                else:
+                    messages.error(request, "Bid must be higher than previous bid")
+
+            elif bid.auction.start_bid:
+                if entered_bid > bid.auction.start_bid:
+                    bid.save()
+                else:
+                    messages.error(request, "Bid must be higher than previous bid")
 
             return HttpResponseRedirect('/detail/' + str(id))
-     
+
         else:
-            form = AddComment()         
+            bidform = BidForm()
+
+        if request.method == "POST":
+            auctions.isActive = False
+            auctions.save()
+            return HttpResponseRedirect('/')
+
+    else:
+        user = None
 
     return render(request, 'auctions/detail.html', {
-        "form": AddComment(),
-        "listings":listings,
+        "commentform": AddComment(),
+        "listing_creator":listing_creator,
+        "auctions":auctions,
+        "watchlist":watchlist,
         "categories":categories,
         "comments":comments,
-    })  
+        "bid": bid,
+        "winning_bid_user":winning_bid_user,
+        "bidform": BidForm(),
+    })
 
 class AddComment(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['text']
 
-
+class BidForm(forms.ModelForm):
+    class Meta:
+        model = Bid
+        fields = ['bid']
 
 def categories(request):
     categories = Category.objects.all()
@@ -131,15 +186,29 @@ def categories(request):
         "categories":categories,
     })
 
-def category_listing(request,category_id):
-    listings = Listing.objects.filter(category__id=category_id)
+def category_auction(request,category_id):
+    auctions = Auction.objects.filter(category__id=category_id)
     name = Category.objects.filter(id=category_id)
 
-    return render(request, "auctions/category_listing.html", {
-        "listings":listings,
+    return render(request, "auctions/category_auction.html", {
+        "auctions":auctions,
         "name":name
     })
 
+def edit_watchlist(request,auction_id):
+    auction = get_object_or_404(Auction, id=auction_id)
+    watchlist, created = Watchlist.objects.get_or_create(user=request.user)
+
+    if auction in watchlist.auctions.all():
+        watchlist.auctions.remove(auction)
+    else:
+        watchlist.auctions.add(auction)
+
+    return HttpResponseRedirect('/detail/' + str(auction_id))
 
 def watchlist(request):
-    return render(request, "auctions/watchlist.html")
+    watchlist, created = Watchlist.objects.get_or_create(user=request.user)
+
+    return render(request, "auctions/watchlist.html", {
+        'watchlist': watchlist
+    })

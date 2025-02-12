@@ -1,32 +1,39 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <h2>Active Listings</h2>
-<hr>
+    <h2>Active Auctions</h2>
 
-   
     <div>
-        {% for listing in listinglist %}
-        
-            <h4><a href="detail/{{ listing.id }}">{{ listing.title }}</a></h4>
-
-            <p><strong>{{ listing.description }}</strong></p>
-            <p>Current Price: ${{listing.current_bid}}</p>
-            
-            <div>{% if listing.image_url %}
-                    <img src="{{listing.image_url}}" width="200" />
-                    <br>
-            {% else %}
-                <em>No Image Provided </em>
-            {% endif %}  
-
-            </div>
-            <br>
+        {% for auction in auctionlist %}
+            {% if auction.isActive %}
+            <h4><a href="detail/{{ auction.id }}">{{ auction.title }}</a></h4>
+            <p>Created by: {{ auction.created_by }}</p>
 
             <hr>
+                <p>Starting Price: ${{auction.start_bid}}</p>
+
+                {% for price in highest_num %}
+                    {% if price.auction_id and auction.id == price.auction_id %}
+                        <p>
+                            Current Price: ${{price.max_value}}
+                        </p>
+                    {% endif %}
+                {% endfor %}
+
+                <div>{% if auction.image_url %}
+                        <img src="{{auction.image_url}}" width="200" />
+                        <br>
+                {% else %}
+                    <em>No Image Provided </em>
+                {% endif %}
+
+                </div>
+                <br>
+
+                <hr>
+
+                {% endif %}
         {% endfor %}
       </div>
-
-
 
 {% endblock %}

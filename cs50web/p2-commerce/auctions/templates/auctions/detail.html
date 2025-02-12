@@ -1,35 +1,77 @@
 {% extends "auctions/layout.html" %} {% block body %}
 
-<h2>Listing Detail - {{listings.title}}</h2>
+<h2>Auction Detail - {{auctions.title}}</h2>
+
+<p> created by : {{auctions.created_by}}</p>
+
+  {% if not auctions.isActive %}
+  <h3> Closed Auction</h3>
+      <p> Auction Winner! <strong>{{winning_bid_user.bid_user}}</strong> - ${{winning_bid_user.bid}}</p>
+      <hr>
+  {% endif %}
 
 
-<h4> Category(s):</h4>
-{% if categories %}
-  {% for category in categories %}
+<h4>Category(s):</h4>
+  {% if categories %}
+    {% for category in categories %}
     <ul>
       <li>{{category.name}}</li>
     </ul>
+    {% endfor %}
+  {% endif %}
+
+<p>description: {{ auction.description }}</p>
+
+<strong>Bid Details:</strong>
+<p>Starting Bid: ${{auctions.start_bid}}</p>
+
+{% for bid in bid %}
+  <li> ${{bid.bid}} by {{bid.bid_user}} </li>
   {% endfor %}
-{% else %}
-    <div> No category chosen</div>
-{% endif %}  
 
-<br>
+{% if auctions.isActive %}
+  <form method="post">
+    {% csrf_token %}
+    {{bidform}}
+    <button type="submit">Submit</button>
+  </form>
+  {% if messages %}
+  <ul class="bid-message-error">
+      {% for message in messages %}
+          <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+      {% endfor %}
+  </ul>
+  {% endif %}
 
-<p>description: {{ listings.description }}</p>
-<p>current bid: {{ listings.current_bid }}</p>
+  <br>
+
+  {% if auctions.created_by == listing_creator %}
+      <form method="post">
+          {% csrf_token %}
+          <button type="submit">Close Auction</button>
+      </form>
+    {% endif %}
+  {% endif %}
 
 <div class="listing-image">
-  {% if listings.image_url %}
-    <img src="{{listings.image_url}}" width="500" />
-  {% else %} 
-    No Image Available 
-  {% endif %}
+  {% if auctions.image_url %}
+  <img src="{{auctions.image_url}}" width="500" />
+  {% else %} No Image Available {% endif %}
 </div>
 
 <br />
 
-<p><input type="checkbox" /> Add to Watchlist</p>
+<form action="{% url 'edit_watchlist' auctions.id %}" method="post">
+  {% csrf_token %}
+
+  {% if auctions in request.user.watchlist.auctions.all %}
+        <button type="submit">Remove from Watchlist</button>
+  {% else %}
+
+      <button type="submit">Add to Watchlist</button>
+  {% endif %}
+</form>
+
 
 <hr />
 
@@ -37,21 +79,18 @@
 
 {% if comments %}
   {% for comment in comments %}
-      {{ comment.text }}
-      <br>
-  {% endfor %}
-{% else %}
-  No Comments
-{% endif %}  
-
+    {{ comment.text }} by {{comment.created_by}}
+<br />
+{% endfor %}
+ {% else %}
+    No Comments
+ {% endif %}
 
 <br />
 <h3>Add Comment</h3>
 
-
 <form method="post">
-  {% csrf_token %} 
-  {{ form.as_p }}
+  {% csrf_token %} {{ commentform.as_p }}
   <button type="submit">Submit</button>
 </form>
 

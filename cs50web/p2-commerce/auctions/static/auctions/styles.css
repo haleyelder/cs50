@@ -1,3 +1,8 @@
 body {
     padding: 10px;
 }
+
+.bid-message-error p {
+    color: red;
+}
+

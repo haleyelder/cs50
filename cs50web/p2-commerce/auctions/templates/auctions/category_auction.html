@@ -1,0 +1,21 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+{% for category in name %}
+  <h2>Active {{category.name}} Category Listings</h2>
+{% endfor %}
+
+{% for auction in auctions %}
+  {% if auction.isActive %}
+
+    <hr>
+    <div>
+        <h4><a href="/detail/{{ auction.id }}">{{ auction.title }}</a></h4>
+
+          {% endif %}
+        {% endfor %}
+      </div>
+
+
+{% endblock %}

@@ -3,6 +3,24 @@
 {% block body %}
     <h2>Watchlist </h2>
 
-    <p>listing of listings that a user added to their own wishlist</p>
-    <p>clicking on listing in list goes to listing detail page</p>
+    <h4>
+        {{request.user}}'s watchlist
+    </h4>
+
+    {% if watchlist.auctions.all %}
+        <ul>
+            {% for auction in watchlist.auctions.all %}
+                <li>
+                    <a href="{% url 'detail' auction.id %}">{{ auction.title }}</a>
+                    <form action="{% url 'edit_watchlist' auction.id %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit">Remove</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Your watchlist is empty.</p>
+    {% endif %}
+
 {% endblock %}

@@ -3,22 +3,15 @@
 {% block body %}
     <h2>Category based Listings</h2>
 
-  
-<p> list out all categories created</p>
-<p>clicking on any category goes to listing of active listings in that category</p>
 
 <div>
     {% for category in categories %}
     <ul>
-        
-        <li><a href="category_listing/{{ category.id }}">{{category}}</li></a>
+
+        <li><a href="category_auction/{{ category.id }}">{{category}}</li></a>
         </ul>
         {% endfor %}
 
     </div>
 
- 
-
-
 {% endblock %}
-
