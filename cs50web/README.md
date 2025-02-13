@@ -1,6 +1,6 @@
 # cs50web - Web Programming with Python and JavaScript
 
-Tracking repo for the course CS50web - [Web Programming with Python and JavaScript](https://cs50.harvard.edu/web/2020/). 
+Tracking repo for the course CS50web - [Web Programming with Python and JavaScript](https://cs50.harvard.edu/web/2020/).
 
 Starting Feb 2023 - Completed - ???
 
@@ -22,7 +22,7 @@ Starting Feb 2023 - Completed - ???
 ### WEEK 4 : SQL, Models, Migrations
 | Project | Date Completed |
 | ----------- | ----------- |
-|P2 - Commerce||
+|P2 - Commerce|2/12/25|
 
 ### WEEK 5 : Javascript
 
